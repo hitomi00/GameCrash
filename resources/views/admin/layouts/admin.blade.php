@@ -18,6 +18,7 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('css/admin/argon-dashboard.css') }}" rel="stylesheet"/>
+    @yield('css')
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -129,5 +130,6 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="{{ asset('css/admin/argon-dashboard.css') }}?v=2.0.4"></script>
+    @yield('scripts')
 </body>
 </html>

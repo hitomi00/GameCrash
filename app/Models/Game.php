@@ -21,4 +21,9 @@ class Game extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function media(): HasMany
+    {
+        return $this->hasMany(GameMedia::class)->orderBy('order');
+    }
 }

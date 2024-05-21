@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Game;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -10,14 +11,13 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('game_media', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->date('release_date');
-            $table->string('developer');
-            $table->string('publisher');
-            $table->string('genre');
-            $table->boolean('is_show')->default(0);
+            $table->foreignIdFor(Game::class)->constrained()->onDelete('cascade');
+            $table->string('file_name');
+            $table->string('file_path');
+            $table->integer('order')->default(0);
+            $table->string('type'); // 'image' или 'video'
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('game_media');
     }
 };

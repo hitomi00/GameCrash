@@ -40,14 +40,14 @@
                         </div>
                         <span class="nav-link-text ms-1">Користувачі</span>
                     </a>
-                    <a class="nav-link active" href="./pages/dashboard.html">
+                    <a class="nav-link active" href="{{ route('admin.tables.games') }}">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Ігри</span>
                     </a>
-                    <a class="nav-link active" href="./pages/dashboard.html">
+                    <a class="nav-link active" href="/tags">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -72,7 +72,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="./pages/billing.html">
+                <a class="nav-link " href="{{ route('admin.carousel.edit') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
@@ -90,7 +90,7 @@
                     <span class="nav-link-text ms-1">Додавання даних</span>
                 </a>
                 <div class="collapse" id="collapseAdds">
-                    <a class="nav-link active" href="./pages/dashboard.html">
+                    <a class="nav-link active" href="{{ route('admin.tables.games.add') }}">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>

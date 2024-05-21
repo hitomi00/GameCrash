@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GameMediaController;
+use App\Http\Controllers\GamesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +33,11 @@ Route::middleware('auth')->group(function () {
 Route::middleware('admin')->group(function () {
     Route::get('admin/dashboard', [DashboardController::class, 'show'])->name('admin.dashboard');
     Route::get('admin/users/view', [UsersController::class, 'show'])->name('admin.tables.users');
+    Route::get('admin/carousel/edit', [CarouselController::class, 'show'])->name('admin.carousel.edit');
+    Route::get('admin/games/view', [GamesController::class, 'show'])->name('admin.tables.games');
+    Route::get('admin/games/add', [GamesController::class, 'showAdd'])->name('admin.tables.games.add');
+    Route::post('admin/games/{game}/media', [GameMediaController::class, 'store'])->name('media.store');
+    Route::post('admin/media/{media}/order', [GameMediaController::class, 'updateOrder'])->name('media.updateOrder');
 });
 
 require __DIR__ . '/auth.php';
